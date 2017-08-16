@@ -1,0 +1,31 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Apr 27, 2017, 10:07:51 PM
+    Author     : Nexor
+*/
+
+input[type=submit]
+{
+    padding:4px;
+    font-size:12px;
+}
+input[type=text]{
+    padding: 8px;
+}
+label{
+    font-size:12px;
+}
+h2{
+    font-size:15px;
+}
+p{
+    font-size:12px;
+}
+div#envelope{
+    width: 80%;
+    margin: 10px 30% 10px 11%;
+}

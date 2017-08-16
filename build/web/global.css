@@ -14,9 +14,9 @@ and open the template in the editor.
     box-sizing: border-box;
 }
 
-/*body {
-    font-family: 'Open Sans'
-}*/
+body {
+    font-family: 'Quicksand'
+}
 
 a {
     text-decoration: none;
@@ -70,33 +70,32 @@ input.forget {
 .content {
     width: 100%;
     height: 100vh;
-    background-color: #A10000
-}
-
-ul#nav {
-
+    background-color: #000000
 }
 
 .horarios-ico{
     background: url("https://cdn0.iconfinder.com/data/icons/feather/96/clock-128.png") no-repeat top left;
     background-position: left;
     background-size: 13%;
-    padding-left: 13%;
+    margin-left: 2%;
+    padding-left: 15%;
 }
 
 .faltas-ico{
-/*    background: url("https://image.flaticon.com/icons/png/128/39/39467.png") no-repeat top left;*/
+    /*    background: url("https://image.flaticon.com/icons/png/128/39/39467.png") no-repeat top left;*/
     background: url("https://cdn3.iconfinder.com/data/icons/smoking/60/Smoking-02-128.png") no-repeat top left;
     background-position: left;
     background-size: 13%;
-    padding-left: 13%;
+    margin-left: 2%;
+    padding-left: 15%;
 }
 
 .notas-ico{
     background: url("https://cdn4.iconfinder.com/data/icons/education-line-icons-vol-3/64/1-128.png") no-repeat top left;
     background-position: left;
     background-size: 13%;
-    padding-left: 13%;
+    margin-left: 2%;
+    padding-left: 15%;
 }
 
 .tarefas-ico{ 
@@ -104,14 +103,36 @@ ul#nav {
     background: url("https://image.flaticon.com/icons/png/128/124/124671.png") no-repeat top left;
     background-position: left;
     background-size: 13%;
-    padding-left: 13%;
+    margin-left: 2%;
+    padding-left: 15%;
+}
+
+.comidas-ico{ 
+    background: url("http://www.free-icons-download.net/images/fast-food-icon-45969.png") no-repeat top left;
+    background-position: left;
+    background-size: 13%;
+    margin-left: 2%;
+    padding-left: 15%;
+}
+
+.suporte-ico{ 
+    background: url("http://www.iconhot.com/icon/png/devine/256/letter-closed.png") no-repeat top left;
+    background-position: left;
+    background-size: 13%;
+    margin-left: 2%;
+    padding-left: 15%;
 }
 
 .config-ico{ 
     background: url("https://d30y9cdsu7xlg0.cloudfront.net/png/5392-200.png") no-repeat top left;
     background-position: left;
     background-size: 13%;
-    padding-left: 13%;
+    margin-left: 2%;
+    padding-left: 15%;
+}
+
+ul#nav {
+
 }
 
 ul#nav li{

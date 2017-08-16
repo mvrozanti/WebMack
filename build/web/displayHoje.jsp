@@ -35,6 +35,8 @@
                     <li class="faltas-ico"><a href="#">Faltas*</a></li>
                     <li class="notas-ico"><a href="#">Notas*</a></li>
                     <li class="tarefas-ico"><a href="#">Tarefas*</a></li>
+                    <li class="comidas-ico"><a href="#">Comidas/Delivery*</a></li>
+                    <li class="suporte-ico"><a href="#">Suporte*</a></li>
                     <li class="config-ico"><a href="#">Configurações*</a></li>
                 </ul>
                 <form action="esquecer.jsp" method="POST">

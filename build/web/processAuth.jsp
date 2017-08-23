@@ -34,10 +34,10 @@
                 matr = request.getParameter("matricula");
                 senha = request.getParameter("senha");
                 Cookie cMatr = new Cookie("matricula", matr);
-                cMatr.setMaxAge(60 * 30);//30 min -- ate la ja fiz o eterno
+                cMatr.setMaxAge(Integer.MAX_VALUE);
                 Cookie cSenha = new Cookie("senha", senha);
                 response.addCookie(cMatr);
-                cSenha.setMaxAge(60 * 30);//30 min -- ate la ja fiz o eterno
+                cSenha.setMaxAge(Integer.MAX_VALUE);
                 response.addCookie(cSenha);
             }
             response.setHeader("matricula", matr);

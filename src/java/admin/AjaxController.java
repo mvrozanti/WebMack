@@ -14,9 +14,8 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import mackApp.backend.Controller;
 import mackApp.backend.WebRobot;
-import mackApp.backend.tia.TIAController;
-import mackApp.backend.moodle.MoodleController;
 
 /**
  *
@@ -25,9 +24,7 @@ import mackApp.backend.moodle.MoodleController;
 @WebServlet(urlPatterns = {"/AjaxController"})
 public class AjaxController extends HttpServlet {
 
-    private static TIAController tc;
-    private static MoodleController mc;
-//    private static Controller mainController;
+    private static Controller mainController;
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -51,33 +48,19 @@ public class AjaxController extends HttpServlet {
             case "begin":
                 try {
                     String[] credentials = parseCookies(request.getCookies());
-                    request.getSession().setMaxInactiveInterval(0);
-                    while (request.getSession().getAttributeNames().hasMoreElements()) {
-                        String key = request.getSession().getAttributeNames().nextElement();
-                        System.out.println("\t" + request.getSession().getAttribute(key));
-                    }
-
-                    if (credentials[2] == null) {
-//                        tc = new TIAController(credentials[0], credentials[1]);
-//                        mc = new MoodleController(credentials[0], credentials[1]);
-                        
-                        response.addCookie(new Cookie("sessionID", request.getSession().getId()));
-                    } else {
-//                        tc = (TIAController) SerializationUtils.deserialize(credentials[3].getBytes());
-//                        mc = (MoodleController) SerializationUtils.deserialize(credentials[4].getBytes());
-                    }
+                    mainController = new Controller(credentials[0], credentials[1]);
                 } catch (Exception ex) {
                     Logger.getLogger(AjaxController.class.getName()).log(Level.SEVERE, null, ex);
                 }
                 break;
             case "horarios":
-                resHTML = tc.getHorariosTable();
+                resHTML = mainController.getHorariosTable();
                 break;
             case "faltas":
-                resHTML = tc.getFaltasTable();
+                resHTML = mainController.getFaltasTable();
                 break;
             case "notas":
-                resHTML = tc.getNotasTable();
+                resHTML = mainController.getNotasTable();
                 break;
             case "tarefas":
 //                resHTML = mc.getTarefasTable();
@@ -89,8 +72,7 @@ public class AjaxController extends HttpServlet {
                 break;
             case "att":
                 long t1 = System.currentTimeMillis();
-                tc.query();
-                mc.query();
+                mainController.query();
                 System.out.println(System.currentTimeMillis() - t1);
                 break;
             case "config":
@@ -151,21 +133,14 @@ public class AjaxController extends HttpServlet {
                 username = c.getValue();
             } else if (c.getName().equals("senha")) {
                 password = c.getValue();
-            } else if (c.getName().equals("sessionID")) {
-                sid = c.getValue();
-            } else if (c.getName().equals("tc")) {
-                tcBytes = c.getValue();
-            } else if (c.getName().equals("mc")) {
-                mcBytes = c.getValue();
             }
         }
-        return new String[]{username, password, sid, tcBytes, mcBytes};
+        return new String[]{username, password};
     }
 
     @Override
     public void destroy() {
-        tc.driver.close();
-        mc.driver.close();
+        mainController.close();
         super.destroy();
     }
 }

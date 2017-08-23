@@ -1,7 +1,4 @@
 <%@page import="admin.AjaxController"%>
-<%@page import="mackApp.backend.tia.TIAController"%>
-<%@page import="java.util.List"%>
-<%@page import="java.util.Arrays"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page session="false" %>
 
@@ -44,6 +41,7 @@
             });
         </script>
     </head>
+    <div id="ragu" style="position:absolute"></div>
     <div id="header">
         <div class="logo">
             <a href="#">
@@ -70,12 +68,6 @@
                 *: not implemented yet!
             </div>
             <div class="content">
-                <!--                <form>
-                                    <input type="text" id="fullname">
-                                    <input type="button" value="Hello" id="bttAjax">
-                                    <br>
-                                    <span id="result1"></span>
-                                </form>-->
                 <span id="result1"></span>
             </div>
         </div>
